@@ -12,3 +12,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.question-box {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  height: 500px;
+  justify-content: space-around;
+}
+.question-box b {
+  font-size: 2em;
+}
+.question-box input {
+  width: 50%;
+  height: 50px;
+  margin: auto;
+  border: none;
+  font-size: 1.5em;
+  box-shadow: 0px 2px 2px 0px #22211f12, 0px 2px 4px 2px #22211f24;
+}
+.question-box input.active {
+  box-shadow: 0px 2px 2px 0px #22211f12, 0px 2px 4px 2px #0eb3c624;
+}
