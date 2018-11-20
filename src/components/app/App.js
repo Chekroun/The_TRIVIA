@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
-import Home from '../../views/home/Home';
-import CategoryContainer from  '../../views/category/CategoryContainer';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import HomeContainer from '../../views/home/HomeContainer';
+import CategoryContainer from '../../views/category/CategoryContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Router>
-          <div>
-          <Route exact path="/" component={Home}/>
-          <Route path="/categories/:category" component={CategoryContainer} />
-          </div>
+          <Fragment>
+            <Route exact path="/" component={HomeContainer} />
+            <Route path="/categories/:id" component={CategoryContainer} />
+          </Fragment>
         </Router>
       </div>
     );
