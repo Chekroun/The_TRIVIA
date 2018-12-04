@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+<<<<<<< HEAD
 const Category = ({category, verif}) => (
   <section>
     <h1>Category page:{category.title}</h1>
@@ -13,9 +14,31 @@ const Category = ({category, verif}) => (
    
   </section>
 );
+=======
+const Category = ({ category, currentQuestionIndex, handleSubmit, answerInput, score}) => {
+    const theQuestion = category.clues[currentQuestionIndex];
+    return(
+        <section className={'question-box'}>
+            <h1>Category page: {category.title}</h1>
+            <span>Question : {theQuestion.question}</span>
+            <span>Votre score : {score}</span>
+            <form className={'question-box'} onSubmit={handleSubmit}>
+                <input ref={answerInput}></input>
+                <button type={'submit'}>Send answer</button>
+            </form>
+        </section>
+    );
+  
+};
+>>>>>>> ed4b9f55d5bf9b2740a0dfbffe012aa65840ad1b
 
 Category.propTypes = {
-  categoryName: PropTypes.string.isRequired,
+    category: PropTypes.shape({}).isRequired,
+    currentQuestion: PropTypes.number.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    answerInput: PropTypes.shape({
+        value: PropTypes.instanceOf(HTMLInputElement)
+}),
 };
 
 export default Category;

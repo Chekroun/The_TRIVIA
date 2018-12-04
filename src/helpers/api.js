@@ -9,6 +9,10 @@ class api {
       const json = await response.json();
       return json;
     }
+    async getRandom() {
+      const reponse = await fetch('http://jservice.io/api/random');
+      const json = await reponse.json();
+      return json;
+    }
   }
-  
   export default new api();
