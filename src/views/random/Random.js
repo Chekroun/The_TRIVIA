@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Category = ({ category, currentQuestionIndex, handleSubmit, answerInput, score}) => {
-    const theQuestion = category.clues[currentQuestionIndex];
+const Random = ({ random, currentQuestionIndex, handleSubmit, answerInput, score}) => {
+    const theQuestion = random[currentQuestionIndex];
     return(
         <section className={'question-box'}>
-            <h1>Category page: {category.title}</h1>
+            <h1>Category page: {random.title}</h1>
             <span>Question : {theQuestion.question}</span>
             <span>Votre score : {score}</span>
             <form className={'question-box'} onSubmit={handleSubmit}>
@@ -17,8 +17,8 @@ const Category = ({ category, currentQuestionIndex, handleSubmit, answerInput, s
   
 };
 
-Category.propTypes = {
-    category: PropTypes.shape({}).isRequired,
+Random.propTypes = {
+    random: PropTypes.shape({}).isRequired,
     currentQuestion: PropTypes.number.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     answerInput: PropTypes.shape({
@@ -26,4 +26,4 @@ Category.propTypes = {
 }),
 };
 
-export default Category;
+export default Random;

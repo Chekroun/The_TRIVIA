@@ -6,10 +6,10 @@ const Home = ({ categories }) => (
   <section>
     <h1>Homepage</h1>
     {categories.length > 0 && (
-      <section>
+      <section className={'home-link'}>
         {categories.map(category => (
-          <Link to={`/categories/${category.id}`} key={category.id}>
-            {category.title}
+          <Link className={'cat-link'} to={`/categories/${category.id}`} key={category.id}>
+            {category.title} /
           </Link>
         ))}
       </section>

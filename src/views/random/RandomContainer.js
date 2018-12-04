@@ -1,10 +1,10 @@
 import React, { Component, createRef } from 'react';
-import Category from './Category';
+import Random from './Random';
 import api from '../../helpers/api';
 
-class CategoryContainer extends Component {
+class RandomContainer extends Component {
     state = {
-        category: null,
+        random: null,
         currentQuestion: 0,
         score: 0,
         playerAnswer: ''
@@ -12,19 +12,19 @@ class CategoryContainer extends Component {
     answerInput = createRef();
 
     async componentDidMount() {
-        const data = await api.getCategoryById(this.props.match.params.id);
+        const data = await api.getRandom();
         this.setState( {
-            category: data,
+            random: data,
         });
     }
 
     handleSubmit = (e) => {
         // here I prevent de fault bh of submitting form
         e.preventDefault();
-        const { category } = this.state;
+        const { random } = this.state;
         const  currentQuestion  = this.state.currentQuestion;
         var answer = this.answerInput.current.value;
-        const currentAnswer = category.clues[currentQuestion].answer;
+        const currentAnswer = random[currentQuestion].answer;
         console.log(answer.toLowerCase());
         if(answer.toLowerCase() === currentAnswer.toLowerCase()) {
             console.log("okok");
@@ -43,13 +43,13 @@ class CategoryContainer extends Component {
     }
 
   render() {
-      const { category } = this.state;
+      const { random } = this.state;
       const  currentQuestion  = this.state.currentQuestion;
      console.log(this.state);
-     if(!category) return <div>is loading</div>
+     if(!random) return <div>is loading</div>
         return (
-            <Category
-                category={category}
+            <Random
+                random={random}
                 currentQuestionIndex = {currentQuestion}
                 handleSubmit={this.handleSubmit}
                 answerInput={this.answerInput}
@@ -59,4 +59,4 @@ class CategoryContainer extends Component {
         }
     }
 
-export default CategoryContainer;
+export default RandomContainer;
