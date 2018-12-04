@@ -9,7 +9,7 @@ const Home = ({ categories }) => (
       <section className={'home-link'}>
         {categories.map(category => (
           <Link className={'cat-link'} to={`/categories/${category.id}`} key={category.id}>
-            {category.title} /
+            {category.title}
           </Link>
         ))}
       </section>

@@ -28,16 +28,17 @@ class CategoryContainer extends Component {
 
         if(answer.toLowerCase() === currentAnswer.toLowerCase()) {
             var check = document.getElementById('check_down');
-            check.className = 'visible';
-
+            //check.className = 'visible';
+            
             this.setState({
                 currentQuestion: this.state.currentQuestion + 1,
                 score: this.state.score + 1
             })
+            localStorage.setItem('score', this.state.score);
 
         } else {
             var wrong = document.getElementById('wrong');
-            wrong.className = 'visible';
+            //wrong.className = 'visible';
             this.setState({
                 currentQuestion: this.state.currentQuestion + 1
             })
@@ -46,6 +47,7 @@ class CategoryContainer extends Component {
     }
 
   render() {
+      var storageScore = localStorage.getItem('scrore');
       const { category } = this.state;
       const  currentQuestion  = this.state.currentQuestion;
      console.log(this.state);
@@ -56,7 +58,7 @@ class CategoryContainer extends Component {
                 currentQuestionIndex = {currentQuestion}
                 handleSubmit={this.handleSubmit}
                 answerInput={this.answerInput}
-                score={this.state.score}
+                score={this.state.storageScore}
             />
         );
         }

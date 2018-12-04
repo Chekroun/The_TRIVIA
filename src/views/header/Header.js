@@ -21,7 +21,7 @@ class Header extends Component {
             <header>
                 <nav>
                     {this.state.liens.map(lien => (
-                        <Link className={'cat-link'} to={`/${lien.root}`} key={lien.title}>
+                        <Link className={'header-link'} to={`/${lien.root}`} key={lien.title}>
                         {lien.title} 
                       </Link>
                     ))}
