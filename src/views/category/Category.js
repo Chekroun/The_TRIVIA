@@ -12,6 +12,10 @@ const Category = ({ category, currentQuestionIndex, handleSubmit, answerInput, s
                 <input ref={answerInput}></input>
                 <button type={'submit'}>Send answer</button>
             </form>
+            <div className={'iframe'}>
+                <iframe id={'wrong'} className={'invisible'} width="100" height="100" src="https://lottiefiles.com/iframe/2068-error-cross" frameborder="0" ></iframe>
+                <iframe id={'check_down'} className={'invisible'} width="100" height="100" src="https://lottiefiles.com/iframe/433-checked-done" frameborder="0" ></iframe>
+            </div>
         </section>
     );
   

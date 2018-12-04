@@ -32,8 +32,12 @@ nav a {
   flex-direction: column;
   width: 80%;
   margin: auto;
-  height: 300px;
+  height: 400px;
   justify-content: space-around;
+}
+section.home-container {
+  display: flex;
+  flex-direction: column;
 }
 .question-box b {
   font-size: 2em;
@@ -73,4 +77,19 @@ nav a {
 .cat-link:hover {
   color: #0eb3c6;
   text-decoration: underline #0eb3c6;
+}
+.iframe {
+  display: flex;
+  width: 20%;
+  margin: auto;
+  justify-content: space-around;
+}
+iframe svg {
+  overflow: hidden;
+}
+iframe.invisible {
+  display: none;
+}
+iframe.visible {
+  display: block;
 }

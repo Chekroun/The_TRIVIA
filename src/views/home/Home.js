@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Home = ({ categories }) => (
-  <section>
+  <section className={'home-container'}>
     <h1>Homepage</h1>
     {categories.length > 0 && (
       <section className={'home-link'}>

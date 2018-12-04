@@ -25,19 +25,22 @@ class CategoryContainer extends Component {
         const  currentQuestion  = this.state.currentQuestion;
         var answer = this.answerInput.current.value;
         const currentAnswer = category.clues[currentQuestion].answer;
-        console.log(answer.toLowerCase());
+
         if(answer.toLowerCase() === currentAnswer.toLowerCase()) {
-            console.log("okok");
+            var check = document.getElementById('check_down');
+            check.className = 'visible';
+
             this.setState({
                 currentQuestion: this.state.currentQuestion + 1,
                 score: this.state.score + 1
             })
+
         } else {
+            var wrong = document.getElementById('wrong');
+            wrong.className = 'visible';
             this.setState({
                 currentQuestion: this.state.currentQuestion + 1
             })
-            console.log('non non');
-            
         }
         this.answerInput.current.value = ' ';
     }
