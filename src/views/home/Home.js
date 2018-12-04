@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Home = ({ categories }) => (
   <section className={'home-container'}>
-    <h1>Homepage</h1>
+    <h1 className={'title'}>Homepage</h1>
     {categories.length > 0 && (
       <section className={'home-link'}>
         {categories.map(category => (

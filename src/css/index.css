@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Paytone+One|Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Paytone+One|Titillium+Web');
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #599F9E;
 }
 
 code {
@@ -15,6 +16,7 @@ code {
 }
 
 header {
+  z-index: 9999;
   width: 100vw;
   height: 50px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
@@ -27,10 +29,13 @@ nav {
 }
 nav a {
   align-self: center;
+  font-family: 'Titillium Web';
+  color: white;
 }
-h1 {
-  font-family: 'Shrikhand';
+h1.title {
+  font-family: 'Titillium Web';
   font-size: 2.6em;
+  color: white;
 }
 .question-box {
   display: flex;
@@ -68,14 +73,20 @@ section.home-container {
 .home-link {
   display: flex;
   flex-wrap: wrap;
-  width: 80vw;
+  min-width: 80vw;
   align-self: center;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
   padding: 20px;
+  margin: 50px;
+  background-color: #22211f24;
 }
 .header-link {
   color: black;
   text-decoration: none;
+  color: white;
+}
+.header-link:hover {
+  text-decoration: underline;
 }
 .cat-link {
   margin: 5px;
@@ -84,17 +95,16 @@ section.home-container {
   text-decoration: none;
   border: 1px solid #adc7e6;
   border-radius: 12px;
-  background: #5c90df;
-  box-shadow: 2px 2px 1px 0px #adc7e6;
-  font-family: 'Paytone One';
+  background: #6FC5C3;
+  box-shadow: 0 2px 2px 0 rgba(255,255,255,0.16),0 0 0 1px rgba(255,255,255,0.08);
+  font-family: 'Titillium Web';
   transition: all 0.3s ease;
 }
 .cat-link:hover {
   padding: 10px;
-  color: #5c90df;
-  text-decoration: underline #5c90df;
+  color: #6FC5C3;
+  text-decoration: underline #6FC5C3;
   background-color: white;
-  font-size: 1.1em;
 }
 .iframe {
   display: flex;
