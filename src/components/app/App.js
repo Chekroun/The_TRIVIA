@@ -15,6 +15,7 @@ class App extends Component {
             <Route path="/" component={Header}/>
             <Route exact path="/" component={HomeContainer}/>
             <Route path="/categories/:id" component={CategoryContainer} />
+            <Route path="/categories/:id/all" component={CategoryContainer}/>
             <Route path='/random' component={RandomContainer}/>
           </Fragment>
         </Router>
